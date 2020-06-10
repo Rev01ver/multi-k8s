@@ -10,7 +10,7 @@ docker push crank777/multi-client:$SHA
 docker push crank777/multi-server:$SHA 
 docker push crank777/multi-worker:$SHA 
 
-kubectl apply -f k8
+kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=crank777/multi-server:$SHA 
 kubectl set image deployments/client-deployment server=crank777/multi-client:$SHA 
 kubectl set image deployments/worker-deployment server=crank777/multi-worker:$SHA 
