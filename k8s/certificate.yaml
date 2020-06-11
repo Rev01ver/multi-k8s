@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: kiri-tech-tls
+spec:
+  secretName: kiri-tech-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: kiri.tech
+  dnsNames:
+    - kiri.tech
+    - www.kiri.tech
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - kiri.tech
+          - www.kiri.tech
