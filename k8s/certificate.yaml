@@ -3,7 +3,7 @@ kind: Certificate
 metadata:
   name: kiri-tech-tls
 spec:
-  secretName: kiri-tech-tls
+  secretName: kiri-tech
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
